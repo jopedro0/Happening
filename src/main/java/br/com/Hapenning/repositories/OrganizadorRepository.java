@@ -1,9 +1,8 @@
 package br.com.Hapenning.repositories;
 
-import br.com.Hapenning.Models.usuario.Usuario;
+import br.com.Hapenning.Models.organizador.Organizador;
 import org.springframework.data.jpa.repository.JpaRepository;
 
-public interface UsuarioRepository extends JpaRepository<Usuario, Long> {
+public interface OrganizadorRepository extends JpaRepository<Organizador, Long> {
     boolean existsByEmail(String email);
-
 }

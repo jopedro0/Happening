@@ -16,6 +16,9 @@ public class UsuarioService {
 
     public Usuario criar(UsuarioRequest usuarioRequest){
         Usuario usuario = usuarioRequest.toUsuario();
+        if (usuarioRepository.existsByEmail(usuarioRequest.email())){
+            throw new RuntimeException("Email já em uso");
+        }
         return usuarioRepository.save(usuario);
     }
 
